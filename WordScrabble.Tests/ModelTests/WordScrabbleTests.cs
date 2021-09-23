@@ -20,5 +20,23 @@ namespace WordScrabble.Tests
       //Assert
       Assert.AreEqual(testWord, friend.Play);
     }
+
+    [TestMethod]
+    public void ToScore_CreateStringArray_StringArray()
+    {
+      //Arrange
+      string testWord = "friend";
+      char[] testBlob = {'f', 'r', 'i', 'e', 'n', 'd'};
+
+      //Act
+      ScrabbleWord friend = new ScrabbleWord(testWord);
+      char[] scoreBlob = (friend.Play).ToCharArray();
+
+      //Assert
+      CollectionAssert.AreEqual(scoreBlob, testBlob);
+
+    }
+    
   }
 }
+
