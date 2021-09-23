@@ -1,11 +1,24 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using WordScrabble;
+using System.Collections.Generic;
+using System;
 
-namespace ProjectName.Tests
+namespace WordScrabble.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class ScrabbleWordTests
   {
-    // Test methods go here
+    [TestMethod]
+    public void ScrabbleScorer_CreateNewScrabbleWord_ScrabbleWord()
+    {
+      //Arrange
+      string testWord = "friend";
+
+      //Act
+      ScrabbleWord friend = new ScrabbleWord(testWord);
+
+      //Assert
+      Assert.AreEqual(testWord, friend.Play);
+    }
   }
 }
