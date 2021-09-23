@@ -22,7 +22,7 @@ namespace WordScrabble.Tests
     }
 
     [TestMethod]
-    public void ToScore_CreateStringArray_StringArray()
+    public void ToScore_CreateCharArray_CharArray()
     {
       //Arrange
       string testWord = "friend";
@@ -34,9 +34,30 @@ namespace WordScrabble.Tests
 
       //Assert
       CollectionAssert.AreEqual(scoreBlob, testBlob);
+    }
 
+    [TestMethod]
+    public void FindValue_ReturnValues_CharArray()
+    {
+      //Arrange
+      char[] testScoreSet = {4, 1, 1, 1, 1, 2};
+
+      //Assert
+      CollectionAssert.AreEqual(testScoreSet, score);
     }
     
   }
 }
 
+
+      // //Arrange
+      // string testWord = "friend";
+      // char[] testBlob = {'f', 'r', 'i', 'e', 'n', 'd'};
+      
+      // //Act 
+      // ScrabbleWord friend = new ScrabbleWord(testWord);
+      // char[] scoreBlob = (friend.Play).ToCharArray();
+      // char[] testArray = (wordToScore);
+
+      // //Assert 
+      // CollectionsAssert.AreEqual(testBlob, testArray);
